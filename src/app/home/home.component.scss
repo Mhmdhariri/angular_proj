@@ -1,0 +1,98 @@
+/* H1 Styling */
+h1 {
+    text-align: center;
+    margin-top: 15px;
+    width: 100%;
+    background-image: url('/images/background3.jpg');  /* Correct path for public folder */
+    background-size: cover; /* This will ensure the image covers the entire h1 */
+    background-position: center; /* This will center the image */
+    height: 50px;
+}
+
+/* Cards container style */
+.cardsDiv {
+    padding: 30px;
+    background-color: #f9f8f8;
+    opacity: 0; /* Initially hide the cards */
+    animation: fadeIn 1.5s ease-in-out forwards; /* Apply fade-in animation */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+/* Card styling */
+.card {
+    transition: opacity 1s ease-in-out;
+}
+
+/* When the data is loaded, apply the fade-in to each card */
+.card.show {
+    opacity: 1; /* Make it visible once the fade-in effect is applied */
+}
+
+  /* Create a full-screen overlay with the loading spinner */
+  .loading-overlay {
+    position: fixed; /* Position the overlay on the entire screen */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 9999; /* Ensure it's on top of all other content */
+  }
+/* Styling for uniform cards */
+.card {
+    height: 350px; /* Set a standard height */
+    display: flex;
+    flex-direction: column; /* Ensure the content inside the card is stacked vertically */
+}
+
+/* Standardize image size */
+.card-img-top {
+    height: 150px; /* Fixed height for the image */
+    object-fit: cover; /* Ensure image covers the area without stretching */
+    width: 100%; /* Make sure the image is responsive */
+}
+
+/* Card body styling */
+.card-body {
+    flex-grow: 1; /* Allow the body to take up available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out the content evenly */
+}
+
+/* Allow the text to wrap instead of being truncated */
+.card-title, .card-text {
+    white-space: normal;
+    overflow: visible;
+    word-wrap: break-word;
+}
+
+/* Push the button to the bottom of the card */
+.card-body .btn {
+    margin-top: auto;
+}
+
+/* Styling for the search container */
+.search-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-container input {
+    width: 200px;
+    padding: 8px;
+    font-size: 1rem;
+    margin-left: 30px;
+}

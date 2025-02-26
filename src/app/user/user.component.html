@@ -1,0 +1,29 @@
+<h1>User: {{user?.first_name}} {{user?.last_name}}</h1>
+
+<!-- Full screen overlay for loading spinner -->
+<div *ngIf="isLoading" class="loading-overlay">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<div class="userBody">
+    <!-- User Info Card -->
+    <div *ngIf="!isLoading && user" class="card mb-3" style="max-width: 540px; " [ngClass]="{'fade-in': !isLoading}">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img [src]="user.avatar" class="img-fluid rounded"
+                    alt="{{ user.first_name }} {{ user.last_name }}" style="height: 177px;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+                    <p class="card-text">Email: {{ user.email }}</p>
+                    <p class="card-text">ID: {{ user.id }}</p>
+                    <a (click)="redirectToHomePage()" class="btn btn-secondary">Back</a> <!-- Back Button -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
